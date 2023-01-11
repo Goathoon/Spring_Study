@@ -20,7 +20,7 @@ public class AppConfig {
     }
 
     @Bean
-    private static MemberRepository memberRepository() { //굳이 public으로 ?
+    private static MemberRepository memberRepository() { //굳이 public으로
         return new MemoryMemberRepository();
     }
 
