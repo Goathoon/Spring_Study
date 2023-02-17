@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
     @GetMapping("hello")
-    public String hello(Model model){
-        model.addAttribute("data","hello!!");
+    @ResponseBody
+    public String hello(){
         return "hello";
     }
     @GetMapping("Hello-mvc")
