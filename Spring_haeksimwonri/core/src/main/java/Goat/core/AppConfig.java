@@ -16,16 +16,19 @@ public class AppConfig {
 
     @Bean
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
-    private static MemberRepository memberRepository() { //굳이 public으로
+    public MemberRepository memberRepository() { //굳이 public으로 -> 이유가있었구나.. 스프링컨테이너 싱글톤 보장 위함
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
     @Bean
