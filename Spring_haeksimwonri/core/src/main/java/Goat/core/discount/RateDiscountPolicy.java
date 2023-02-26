@@ -2,7 +2,9 @@ package Goat.core.discount;
 
 import Goat.core.member.Grade;
 import Goat.core.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private int discountPercent = 10; //10%의 할인정책 적용
